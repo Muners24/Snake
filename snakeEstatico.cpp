@@ -29,7 +29,7 @@
 #define IZQUIERDA 2
 #define ABAJO 3
 
-#define NADA -1
+#define INDETERMINADO -1
 
 typedef Rectangle Trec;
 
@@ -55,7 +55,7 @@ typedef struct _cuerpo
     Trec pos;      //
     int direccion; //---------------->     2       p       0
     //
-    bool status; //                              3
+    bool status; //                                3
     int anteriorDir;
     bool enlace;
 } Tcuerpo;
@@ -219,7 +219,7 @@ void movimientoSnake(Tsnake &snake, Tcuerpo pieza[], char tecla)
         {
             if (cruzarY)
             {
-                if (snake.direccion != -1)
+                if (snake.direccion != INDETERMINADO)
                 {
                     snake.anteriorDir = snake.direccion;
                 }
@@ -232,7 +232,7 @@ void movimientoSnake(Tsnake &snake, Tcuerpo pieza[], char tecla)
         {
             if (cruzarX)
             {
-                if (snake.direccion != -1)
+                if (snake.direccion != INDETERMINADO)
                 {
                     snake.anteriorDir = snake.direccion;
                 }
@@ -245,7 +245,7 @@ void movimientoSnake(Tsnake &snake, Tcuerpo pieza[], char tecla)
         {
             if (cruzarY)
             {
-                if (snake.direccion != -1)
+                if (snake.direccion != INDETERMINADO)
                 {
                     snake.anteriorDir = snake.direccion;
                 }
@@ -258,7 +258,7 @@ void movimientoSnake(Tsnake &snake, Tcuerpo pieza[], char tecla)
         {
             if (cruzarX)
             {
-                if (snake.direccion != -1)
+                if (snake.direccion != INDETERMINADO)
                 {
                     snake.anteriorDir = snake.direccion;
                 }
@@ -267,7 +267,7 @@ void movimientoSnake(Tsnake &snake, Tcuerpo pieza[], char tecla)
         }
         break;
     case 'x':
-        snake.direccion = -1;
+        snake.direccion = INDETERMINADO;
         break;
     }
 
@@ -302,7 +302,7 @@ void movimientoSnake(Tsnake &snake, Tcuerpo pieza[], char tecla)
     }
 
     // movimiento snake
-    if (snake.direccion != -1)
+    if (snake.direccion != INDETERMINADO)
     {
         switch (snake.direccion)
         {
